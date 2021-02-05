@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations:[
-        HomeComponent,
+        HomeComponent, 
         BannerComponent
     ],
     imports:[

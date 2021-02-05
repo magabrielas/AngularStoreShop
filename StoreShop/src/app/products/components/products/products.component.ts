@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Producto} from '.././producto.model'
+import {Producto} from '../../../producto.model'
 
 @Component({
   selector: 'app-products',
@@ -7,7 +7,7 @@ import {Producto} from '.././producto.model'
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  p : Producto[] = [
+  productos : Producto[] = [
     {
       id:'1',
       image:'assets/images/mafaldaMate.jpg',

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  image:String = './assets/images/contact-banner.jpg';
   constructor() { }
 
   ngOnInit(): void {

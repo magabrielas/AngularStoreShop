@@ -8,7 +8,7 @@ import { Component,
   SimpleChanges,
   OnDestroy,
   DoCheck } from '@angular/core';
-import {Producto} from '../producto.model';
+import {Producto} from '../../../producto.model';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',

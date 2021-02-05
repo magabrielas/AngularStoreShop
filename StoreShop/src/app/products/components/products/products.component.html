@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row" >
-      <div class="col-md-4" *ngFor="let product of p" >
+      <div class="col-md-4" *ngFor="let product of productos" >
             <app-product  
              (productClicked)="clickProduct($event)" 
              [p]="product">
