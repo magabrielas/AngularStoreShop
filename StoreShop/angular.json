@@ -5,11 +5,7 @@
   "projects": {
     "StoreShop": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -30,6 +26,7 @@
             "styles": [
               "./node_modules/swiper/swiper-bundle.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",              
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./src/styles.css"
             ],
             "scripts": [  
@@ -95,6 +92,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
