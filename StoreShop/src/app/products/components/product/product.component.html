@@ -6,7 +6,7 @@
                 <p>{{p.description}}</p>
                 <strong>{{p.price|currency}}</strong>
                 <br>
-                <button class="btn btn-success"(click)="addCart()">Agregar al carrito</button><br>
+                <button mat-raised-button color="primary" (click)="addCart()">Agregar al carrito</button><br>
                 <a [routerLink]="['/products',p.id]">Ver detalle</a>
             </div>
         </div><br>
