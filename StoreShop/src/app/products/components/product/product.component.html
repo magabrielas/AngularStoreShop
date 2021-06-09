@@ -1,5 +1,35 @@
-
-        <div class="card"> 
+<br><mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{p.title}}</mat-card-title>
+      <mat-card-subtitle>Description</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="p.image" alt="Photo of a product">
+    <mat-card-content>
+      <p>{{p.description}}</p>
+      <strong>{{p.price|currency}}</strong><br>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row center-sm">
+        <div class="col col-sm-6">
+          <button mat-raised-button  
+                  color="primary" 
+                  (click)="addCart()"
+                  style="width: 100%;">Add to Cart</button>
+        </div>
+        <div class="col col-sm-6">
+          <button mat-raised-button 
+                  [routerLink]="['/products',p.id]" 
+                  style="width: 100%;">Ver detalles</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+      
+      
+      <!-- Hecho con Bootstrap-->
+       <!--
+       <div class="card"> 
             <img [src]="p.image" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">{{p.title}}</h5>
@@ -10,7 +40,7 @@
                 <a [routerLink]="['/products',p.id]">Ver detalle</a>
             </div>
         </div><br>
-
+        -->
 
 
 

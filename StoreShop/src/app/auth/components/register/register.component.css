@@ -1,0 +1,32 @@
+.example-full-width {
+    width: 100%;
+  }
+
+.full-width-margin {
+    width: 92%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+.example-form {
+    min-width: 300px;
+    max-width: 500px;
+    width: 96%;
+    margin: 2%;
+  }
+
+  .imagenIconUser{
+      max-width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+
+  }
+  @media(min-width:450px) {
+    .example-card {
+      max-width: 320px;
+      width: 96%;
+      margin: 2%;
+    }
+    
+  }

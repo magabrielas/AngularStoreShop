@@ -1,16 +1,32 @@
     <footer style="background-color:midnightblue;">
             <div class="row justify-content-sm-center">
-                <div class="col col-sm-4">
+                <div class="col col-sm-3">
                     <i class="bi bi-github" style="font-size: 2rem; color:white;"></i>
                 </div>
-                <div class="col col-sm-4">
-                    <i class="bi bi-facebook" style="font-size: 2rem; color:white;"></i>
-                </div>
-                <div class="col col-sm-4">
+                <div class="col col-sm-3">
                     <i class="bi bi-bootstrap" style="font-size: 2rem; color:white;"></i>
+                </div>
+                <div class="col col-sm-6" >
+                        <mat-form-field class="example-full-width" style="color:white">
+                          <mat-label style="color:white">Email de contacto</mat-label>
+                          <input matInput type="email"
+                            placeholder="ejemplo@mail.com" 
+                            value="ejemplo@mail.com"
+                            [formControl] = "emailField">
+                          </mat-form-field>
+                          <button mat-raised-button [disabled]="emailField.invalid"
+                            (click)="sendMail()" style="margin-left:20px;">enviar</button>
+                        
                 </div>
             </div>
     </footer>
-
-  
+<!--
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email de contacto</mat-label>
+          <input matInput placeholder="ejemplo@mail.com" value="ejemplo@mail.com">
+        </mat-form-field>
+      </form>
+-->
+    
  

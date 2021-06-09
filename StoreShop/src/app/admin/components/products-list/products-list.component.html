@@ -1,0 +1,33 @@
+<a mat-raised-button routerLink="/admin/creates">Crear nuevo producto</a>
+
+
+<table mat-table [dataSource]="productsList" class="mat-elevation-z8 productsList" matSort>
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let elementProduct">{{elementProduct.id}}</td>
+      </ng-container>
+      <!-- Title Column -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+        <td mat-cell *matCellDef="let elementProduct">{{elementProduct.title}}</td>
+      </ng-container>
+      <!-- Price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let elementProduct">{{elementProduct.price | currency}}</td>
+      </ng-container>
+      <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+        <td mat-cell *matCellDef="let elementProduct">
+        <!-- Para poder enviar parametros por la url: [routerLink] = "['product-edit',elementProduct.id]"-->
+            <a mat-raised-button [routerLink] = "['/admin/product-edit' ,elementProduct.id]" >Editar</a>
+            <button mat-raised-button color="warn"
+            (click)="deleteProduct(elementProduct.id)">Eliminar</button>
+        </td>
+      </ng-container>
+      
+<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let elementProduct; columns: columnsToDisplay;"></tr>
+</table> 

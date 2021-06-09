@@ -22,8 +22,15 @@ const routes: Routes = [
 
   {path:'products',
    loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule)},
+  
+  {path:'about-us',
+    loadChildren:()=>import('./about-us/about-us.module').then(m=>m.AboutUsModule)},
+  
+  {path:'auth',
+    loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
    
 ]},  
+  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)},
   {path:'demo', loadChildren: () => import('./demo/demo.module').then(m=>m.DemoModule)},
   {path:'**', loadChildren:()=>import('./page-not-found/page-not-found.module').then(m=>m.PageNotFoundModule)}
 ];

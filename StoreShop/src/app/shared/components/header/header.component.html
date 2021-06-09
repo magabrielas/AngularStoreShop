@@ -1,43 +1,49 @@
-      <mat-toolbar color="primary">
-        <mat-toolbar-row>
-              <div class="col-xs-7">
-                  <nav>
-                    <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-                    <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
-                    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> 
-                  </nav>
-              </div>
-              <div class="col-xs-offset-2 end-xs col-xs-3">
-                  <a mat-raised-button matBadge="4" matBadgeColor="warn">
-                    <mat-icon>shopping_cart</mat-icon>
-                  </a>
-              </div>
-    </mat-toolbar-row>
-    </mat-toolbar>
-
-<!--
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div class="row between-xs end-xs header-row">
-      <div class="col-xs header-row">
-          <div class="box">
-            <nav>
-              <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-              <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
-              <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> 
-              <a mat-raised-button matBadge="4" matBadgeColor="warn">
-                <mat-icon>shopping_cart</mat-icon>
-                Carrito
-              </a>
-            </nav>
-          </div>
-          
+<!-- --------------------------- ANGULAR MATERIAL MENU ---------------------------- -->
+  
+  <div class="row menu-smartphone">
+    <mat-toolbar>
+      <div class="col-xs-8">
+        <button mat-button [matMenuTriggerFor]="menu" class="material-icons-round">
+          <mat-icon>menu</mat-icon>
+        </button>
       </div>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
--->
+      <div class="col-xs-offset-1 end-xs col-xs-3">
+        <a mat-raised-button [matBadge]="total" matBadgeColor="warn">
+          <mat-icon>shopping_cart</mat-icon>
+        </a>
+      </div>
+    </mat-toolbar>
+  </div>
 
+<mat-menu class="menu-smartphone" #menu="matMenu">
+        <button mat-menu-item routerLink="/home" routerLinkActive="active">Home</button>
+        <button mat-menu-item routerLink="/products" routerLinkActive="active">Products</button>
+        <button mat-menu-item routerLink="/contact" routerLinkActive="active">Contact</button> 
+        <button mat-menu-item routerLink="/about-us" routerLinkActive="active">About us</button> 
+</mat-menu>
+
+<!-- ------------------------- ANGULAR MATERIAL MAT-TOOLBAR ---------------------------- -->
+
+<div class="row menu-web">
+    <mat-toolbar color="primary">
+      <div class="col-xs-8">        
+          <nav>
+            <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+            <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+            <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> 
+            <a mat-button routerLink="/about-us" routerLinkActive="active">About us</a> 
+          </nav>
+      </div>
+      <div class="col-xs-offset-1 end-xs col-xs-3">
+          <a mat-raised-button [matBadge]="total" matBadgeColor="warn">
+            <mat-icon>shopping_cart</mat-icon>
+          </a>
+      </div>
+    </mat-toolbar> 
+</div>
+
+<!-- ---------------------------BOOTSTRAP MENU ---------------------------- -->
+<!--
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/home">AngularStore</a>
@@ -50,39 +56,18 @@
           <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" routerLink="/contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/products">Products</a>
+          <a class="nav-link" routerLink="/about-us">About Us</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!--
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <div class="row between-xs middle-xs header-row">
-        <div class="col-xs-5">
-          <div class="box">
-            <nav>
-              <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-              <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
-              <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a> 
-            </nav>
-            
-          </div>
-        </div>
-        <div class="col-xs-2">
-          <div class="box">
-            <a mat-raised-button matBadge="4" matBadgeColor="warn">
-              <mat-icon>shopping_cart</mat-icon>
-              Carrito
-            </a>
-          </div>
-        </div>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
 -->
+
+

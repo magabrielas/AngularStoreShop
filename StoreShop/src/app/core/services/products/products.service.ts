@@ -1,22 +1,49 @@
 import { Injectable } from '@angular/core';
-import {Producto} from '../../../producto.model'
+import {Producto} from '../../../producto.model';
+import { HttpClient } from '@angular/common/http';
+import { environment} from './../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
+  /* Usar variable de ambiente de angular para en el futuro
+     modificar las url de forma mas facil. se agrega en la 
+     carpeta environment, luego se importa */
   getById(id:string){
-    return this.productos.find(item=>id===item.id);
+    return this.http.get<Producto>(`${environment.url_api}/products/${id}`);
   }
 
   getAllProducts (){
-    return this.productos;
+    return this.http.get<Producto[]>(`${environment.url_api}/products/`);
+  }
+  //POST
+  createProduct(product:Producto){
+    return this.http.post(`${environment.url_api}/products`,product);
   }
 
-  productos : Producto[] = [
+  deleteProduct(id:string){
+    return this.http.delete(`${environment.url_api}/products/${id}`);
+  }
+
+  /*Partial<> me permite enviar solo los atributos que fueron 
+    modificados y no todo el objeto*/
+  updateProduct(id:string, changes:Partial<Producto>){
+    return this.http.put(`${environment.url_api}/products/${id}`,changes);
+  }
+
+  /* --------------- CON DATOS ESTATICOS ------------- */
+
+  
+/*
+  updateProductStatic(id:string, changes:Partial<Producto>){
+    return this.productos
+    }*/
+
+  productos : Producto[] = [ 
     {
       id:'1',
       image:'assets/images/mafaldaMate.jpg',
@@ -46,5 +73,13 @@ export class ProductsService {
       description:'Mafalda Agenda'
     }
   ];
+
+  getAllProductsStatic (){
+    return this.productos;
+  }
+
+  getByIdStatic(id:string){
+    return this.productos.find(item=>id===item.id);
+  }
 
 }

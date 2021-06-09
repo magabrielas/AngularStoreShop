@@ -1,0 +1,41 @@
+<mat-card class="example-card">
+    <mat-card-header>
+    </mat-card-header>
+    <img mat-card-image [src]="iconUser" class="imagenIconUser" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <form [formGroup]="formGroup" (ngSubmit) = "login($event)">
+        <div class="row">
+          <div class="col">
+              <mat-form-field class="full-width-margin">
+                  <mat-label>email</mat-label>
+                  <input matInput formControlName="email" type="email">
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <mat-form-field class="full-width-margin">
+                  <mat-label>password</mat-label>
+                  <input matInput formControlName="password" type="password">
+              </mat-form-field>
+          </div>
+      </div>
+      <mat-card-actions class="full-width-margin">
+        <div class="row">
+          <div class="col">
+            <button mat-raised-button type="submit"
+            class="example-full-width" color="primary"
+            >sign in</button>
+          </div>
+          <div class="col">
+            <button mat-raised-button
+            class="example-full-width" color="warn"
+            >cancel</button>
+          </div>
+        </div>
+      </mat-card-actions>
+    </form>
+    </mat-card-content>
+  </mat-card>
+
+  

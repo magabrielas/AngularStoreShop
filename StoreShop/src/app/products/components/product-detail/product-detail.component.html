@@ -1,9 +1,25 @@
-<div class="card"> 
-    <img [src]="producto.image" class="card-img-top">
-    <div class="card-body">
-        <h5 class="card-title">Detalle del producto</h5>
-        <p> Nombre: {{producto.title}}</p>
-        <p>Description {{producto.description}}</p>
-        <p>Precio: {{producto.price | currency}}</p>
-    </div>
+<!-- El condicional es para esperar hasta que la peticion
+      de la informacion este resuelta y lista para renderizar-->
+<div *ngIf="producto">
+  <br><mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{producto.title}}</mat-card-title>
+      <mat-card-subtitle>Description</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="producto.image" alt="Photo of a product">
+    <mat-card-content>
+      <p>{{producto.description}}</p>
+      <strong>{{producto.price|currency}}</strong><br>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="createProduct()">CREAR</button>
+      <button mat-button (click)="updateProduct()">EDITAR</button>
+      <button mat-button (click)="deleteProduct()">DELETE</button>
+    </mat-card-actions>
+  </mat-card><br>
 </div>
+
+
+
+

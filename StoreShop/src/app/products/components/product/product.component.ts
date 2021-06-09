@@ -9,6 +9,8 @@ import { Component,
   OnDestroy,
   DoCheck } from '@angular/core';
 import {Producto} from '../../../producto.model';
+import { CartService } from './../../../core/services/cart/cart.service';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -22,7 +24,7 @@ export class ProductComponent implements /*OnChanges,*/OnInit,DoCheck,OnDestroy{
   en el html del componente padre, se coloca entre parentesis*/
   @Output() productClicked:EventEmitter<any> = new EventEmitter();
 
-  constructor(){
+  constructor(private cartService: CartService){
     console.log("1. constructor");
   }
   //Se ejecuta cada vez que hay cambios en el Input
@@ -40,6 +42,7 @@ ngOnDestroy(){console.log('5. OnDestroy');}
 
   addCart(){
     console.log('anadir al carrito');
-    this.productClicked.emit(this.p.id);
+    //this.productClicked.emit(this.p.id);
+    this.cartService.addCart(this.p);
   }
 }

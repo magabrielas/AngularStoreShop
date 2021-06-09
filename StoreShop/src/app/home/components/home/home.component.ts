@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   ngOnInit(): void {
   }
-
+  /* ngAfterViewInit: Cuando los elementos hijos han sido renderizado*/
   ngAfterViewInit(){
     this.mySwiper = new Swiper('.swiper-container');
   }
